@@ -42,7 +42,7 @@ bool  checkCol (std::string sumStr, char symbol)
     for (int i = 0; i < 3; ++i)
     {
         if ((sumStr[i] == sumStr[i+3]) && (sumStr[i+3] == sumStr[i+6])
-        && (sumStr[i] == symbol))
+          && (sumStr[i] == symbol))
         {
             return true;
         }
@@ -55,8 +55,8 @@ bool checkRow (std::string sumStr, char symbol)
     for (int i = 0; i < 3; ++i)
     {
         if (((sumStr[i + 2 * i]) == sumStr[(i + 1) + 2 * i])
-        && ((sumStr[(i + 1 ) + 2 * i]) == sumStr[(i + 2) + 2 * i])
-        && sumStr[i + 2 * i] == symbol)
+          && ((sumStr[(i + 1 ) + 2 * i]) == sumStr[(i + 2) + 2 * i])
+          && sumStr[i + 2 * i] == symbol)
         {
             return true;
         }
@@ -67,8 +67,8 @@ bool checkRow (std::string sumStr, char symbol)
 bool checkDiag (std::string sumStr, char symbol)
 {
     if ((((sumStr[0] == sumStr[4]) && (sumStr[4] == sumStr[8]))
-    || ((sumStr[2] == sumStr[4]) && (sumStr[4] == sumStr[6])))
-    && (sumStr[4] == symbol))
+      || ((sumStr[2] == sumStr[4]) && (sumStr[4] == sumStr[6])))
+      && (sumStr[4] == symbol))
     {
         return true;
     }
@@ -92,18 +92,18 @@ int main()
         int countO = symbolCounter(table, 'O');
 
         if((checkCol(table, 'X') || checkRow(table, 'X')
-        || checkDiag(table, 'X')) && ((countX -  countO ) == 1))
+          || checkDiag(table, 'X')) && ((countX -  countO ) == 1))
         {
             std::cout << "Petya won\n";
         }
         else if ((checkCol( table, 'O') || checkRow(table, 'O')
-        || checkDiag(table, 'O')) && (countO == countX))
+          || checkDiag(table, 'O')) && (countO == countX))
         {
             std::cout << "Vanya won\n";
         }
         else if ((!checkCol(table, 'X') && !checkRow(table, 'X')
-        && !checkDiag(table, 'X')) && (countO == 3 && countX == 3)
-        || (countO <= 2 && countX <= 2) || (countX == 5 && countO == 4))
+          && !checkDiag(table, 'X')) && (countO == 3 && countX == 3)
+          || (countO <= 2 && countX <= 2) || (countX == 5 && countO == 4))
         {
             std::cout << "Nobody\n";
         }
